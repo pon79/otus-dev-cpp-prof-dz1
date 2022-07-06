@@ -5,8 +5,6 @@ set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
 project(helloworld VERSION ${PROJECT_VESRION})
 
-find_package(Boost COMPONENTS unit_test_framework REQUIRED)
-
 configure_file(version.h.in version.h)
 
 add_executable(helloworld_cli main.cpp)
@@ -29,7 +27,8 @@ target_link_libraries(helloworld_cli PRIVATE
     helloworld
 )
 target_link_libraries(test_version
-    ${Boost_LIBRARIES}
+    gtest
+    gtest_main
     helloworld
 )
 
@@ -56,7 +55,6 @@ else ()
 endif()
 
 
-
 install(TARGETS helloworld_cli RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
@@ -69,6 +67,6 @@ set(CPACK_PACKAGE_CONTACT example@example.com)
 
 include(CPack)
 
+include(GoogleTest)
 enable_testing()
-
-add_test(test_version test_version)
+gtest_discover_tests(test_version)
