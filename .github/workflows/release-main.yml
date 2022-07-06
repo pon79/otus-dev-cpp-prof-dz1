@@ -2,9 +2,6 @@ name: 'C++ CI main'
 
 on:
   push:
-    branches:
-      - main
-      - '!googletest'
     tags:
       - v*
 
