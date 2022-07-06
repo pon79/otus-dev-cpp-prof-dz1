@@ -16,8 +16,8 @@ jobs:
       - run: cmake --build . --target test
       - run: cmake --build . --target package
       - uses: ncipollo/release-action@v1.10.0
-      - uses: Shopify/upload-to-release@v1.0.1
+      - uses: svenstaro/upload-release-action@2.3.0
         with:
-          path: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
-          name: helloworld-0.0.${{ github.run_number }}-Linux.deb
+          file: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
+          asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
           
