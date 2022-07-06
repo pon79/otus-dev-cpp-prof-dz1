@@ -2,9 +2,8 @@ name: 'C++ CI googletest'
 
 on:
   push:
-    branches:
-      - '!main'
-      - googletest
+    branches-ignore:
+      - main
     tags:
       - v*
 
