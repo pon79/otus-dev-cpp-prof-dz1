@@ -3,7 +3,7 @@ name: 'C++ CI googletest'
 on:
   push:
     branches-ignore:
-      - main
+      - 'main'
     tags:
       - v*
 
