@@ -5,6 +5,6 @@
 #include <gtest/gtest.h>
 
 TEST(AppTest, VersionTest) {
-    ASSERT_TRUE(version() > 30) << "wrong version number";
+    ASSERT_TRUE(version() > 0) << "wrong version number";
 }
 
