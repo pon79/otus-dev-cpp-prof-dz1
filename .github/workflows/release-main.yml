@@ -19,4 +19,3 @@ jobs:
       - uses: svenstaro/upload-release-action@2.3.0
         with:
           file: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
-          asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
