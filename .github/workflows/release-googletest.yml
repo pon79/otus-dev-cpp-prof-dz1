@@ -18,6 +18,4 @@ jobs:
       - uses: ncipollo/release-action@v1.10.0
       - uses: svenstaro/upload-release-action@2.3.0
         with:
-          file: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
-          asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
-          
+          file: ./helloworld-0.0.${{ github.run_number }}-Linux.deb        
