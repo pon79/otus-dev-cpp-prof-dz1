@@ -7,15 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.5.3
       - run: sudo apt update && sudo apt install libboost-test-dev -y
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
       - run: cmake --build . --target test
       - run: cmake --build . --target package
-      - uses: ncipollo/release-action@v1.10.0
+      - uses: ncipollo/release-action@v1.12.0
       - uses: svenstaro/upload-release-action@2.3.0
         with:
           file: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
